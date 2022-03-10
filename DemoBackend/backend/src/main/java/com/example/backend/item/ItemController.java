@@ -15,6 +15,7 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+@CrossOrigin()
 @RestController
 @RequestMapping("api/backend/items")
 public class ItemController {
