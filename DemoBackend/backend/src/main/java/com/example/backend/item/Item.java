@@ -12,8 +12,17 @@ public class Item {
     @NotNull(message = "name is required")
     @Pattern(regexp="^[a-zA-Z ]+$", message = "name must be a string")
     private final String name;
+
+    @NotNull(message = "price is required")
+    @Positive(message = "price must be positive")
     private final Long price;
+
+    @NotNull(message = "description is required")
+    @Pattern(regexp="^[a-zA-Z ]+$", message = "description must be a string")
     private final String description;
+
+    @NotNull(message = "image is required")
+    @URL(message = "image must be a URL")
     private final String image;
 
     public Item(
