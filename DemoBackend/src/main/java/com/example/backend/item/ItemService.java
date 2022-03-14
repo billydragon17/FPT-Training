@@ -53,7 +53,7 @@ public class ItemService {
     }
 
     public Optional<Item> update( Long id, Item newItem) {
-        // Only update ưhen item is found
+        // Only update when item is found
         return repository.findById(id)
                 .map(oldItem -> {
                    Item updated = oldItem.updateWith(newItem);
