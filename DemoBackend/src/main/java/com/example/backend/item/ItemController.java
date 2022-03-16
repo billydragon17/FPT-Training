@@ -1,5 +1,7 @@
 package com.example.backend.item;
 
+import com.example.backend.common.exception.BusinessException;
+import com.example.backend.constant.BusinessResponseCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
@@ -36,7 +38,7 @@ public class ItemController {
         Optional<Item> item = service.find(id);
         return item
                 .map(value -> ResponseEntity.ok().body(value))
-                .orElseThrow(() -> new ItemNotFoundException(id));
+                .orElseThrow(() -> new BusinessException(BusinessResponseCode.ID_NOT_FOUND));
     }
 
     @PostMapping
@@ -58,7 +60,7 @@ public class ItemController {
 
         return updated
                 .map(value -> ResponseEntity.ok().body(value))
-                .orElseThrow(() -> new ItemNotFoundException(id));
+                .orElseThrow(() -> new BusinessException(BusinessResponseCode.ID_NOT_FOUND));
     }
 
     @DeleteMapping("/{id}")
