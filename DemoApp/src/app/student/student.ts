@@ -1,5 +1,8 @@
+
+
 export class Student{
     id!: string;
     name!: string;
-    subjects!: string[];
+    price!: number;
+    description!: string;
 }
