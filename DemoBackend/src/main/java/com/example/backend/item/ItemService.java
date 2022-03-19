@@ -45,7 +45,7 @@ public class ItemService {
         Item copy = new Item(
                 new Date().getTime(),
                 item.getName(),
-                item.getPrice(),
+                item.getAge(),
                 item.getDescription(),
                 item.getImage()
         );
