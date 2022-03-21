@@ -3,6 +3,16 @@ create schema db_students;
 use db_students;
 
 
+create table Item
+(
+	id int not null,
+    student_name varchar(200),
+    age int not null,
+    student_description varchar(200),
+    image varchar(10000),
+    primary key (id)
+);
+
 create table Students
 (
 	student_id int not null,
@@ -51,4 +61,6 @@ from Students_and_Subjects as SS
 	join Subjects as SU on SS.subject_id = SU.subject_id
 	join Students as ST on SS.student_id = ST.student_id
     /*group by SU.subject_name*/;
+    
+
 

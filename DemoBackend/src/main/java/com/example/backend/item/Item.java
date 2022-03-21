@@ -1,36 +1,38 @@
 package com.example.backend.item;
 
 import org.hibernate.validator.constraints.URL;
-//import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+//import org.springframework.data.annotation.Id;
+import javax.persistence.*;
+// import org.springframework.data.relational.core.mapping.Column;
+// import org.springframework.data.relational.core.mapping.Table;
 
+//import javax.annotation.Generated;
 import javax.validation.constraints.*;
 
-@Table(value = "item")
+// @Table(value = "item")
+@Entity
 public class Item {
-
+    @Id
     private final Long id;
 
     @NotNull(message = "name is required")
     @Pattern(regexp="^[a-zA-Z ]+$", message = "name must be a string")
-    @Column(value = "student_name")
+    // @Column(value = "student_name")
     private final String name;
 
     @NotNull(message = "age is required")
     @Positive(message = "age must be positive")
-    @Column(value = "age")
+    // @Column(value = "age")
     private final Long age;
 
     @NotNull(message = "description is required")
     @Pattern(regexp="^[a-zA-Z ]+$", message = "description must be a string")
-    @Column(value = "description")
+    // @Column(value = "student_description")
     private final String description;
 
     @NotNull(message = "image is required")
     @URL(message = "image must be a URL")
-    @Column(value = "image")
+    // @Column(value = "image")
     private final String image;
 
     public Item(
