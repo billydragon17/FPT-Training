@@ -13,6 +13,7 @@ import javax.validation.constraints.*;
 @Entity
 public class Item {
     @Id
+    @GeneratedValue
     private  Long id;
 
     @NotNull(message = "name is required")
@@ -34,6 +35,8 @@ public class Item {
     @URL(message = "image must be a URL")
     // @Column(value = "image")
     private  String image;
+
+    Item() {}
 
     public Item(
             Long id,
