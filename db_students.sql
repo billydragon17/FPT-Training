@@ -5,9 +5,9 @@ use db_students;
 
 create table Item
 (
-	id int not null,
+	id long not null,
     student_name varchar(200),
-    age int not null,
+    age long not null,
     student_description varchar(200),
     image varchar(10000),
     primary key (id)
