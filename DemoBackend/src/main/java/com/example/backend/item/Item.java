@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
 @Entity
 public class Item {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private  Long id;
 
     @NotNull(message = "name is required")
