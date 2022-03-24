@@ -1,9 +1,9 @@
 
 
-export class Item{
+export class Student{
     id!: string;
     name!: string;
-    price!: number;
+    age!: number;
     description!: string;
     image!: string;
 }
